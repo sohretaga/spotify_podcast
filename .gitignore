@@ -1,0 +1,77 @@
+# Python files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+**/__pycache__/
+**/migrations/[0-9]*.py
+
+# Virtual environment (venv) files
+.env
+.venv/
+venv/
+ENV/
+env/
+
+# Django files
+*.log
+*.pot
+*.pyc
+*.sqlite3
+db.sqlite3
+
+# Pytest / Coverage files
+htmlcov/
+.tox/
+noxfile_config.json
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Environment dependencies
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# macOS operating system files
+.DS_Store
+
+# Linux operating system files
+*~
+*.swp
+
+# Windows operating system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Static and media files
+/staticfiles/
+/media/
+**/staticfiles/
+**/media/
+
+# Bytecode files
+*.py[co]
+
+# Logging
+/logs/
+
+# Other
+*.bak
+*.old
