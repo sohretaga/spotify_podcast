@@ -31,7 +31,7 @@ A lightweight Django REST Framework API that interfaces with the Spotify Web API
 1. Clone the repository:
 ```bash
 git clone https://github.com/sohretaga/spotify_podcast.git
-cd spotify-podcast-api
+cd spotify_podcast_api
 ```
 
 2. Install dependencies using Poetry:
@@ -60,19 +60,27 @@ python manage.py runserver
 ## API Endpoints
 
 ### 1. Search Podcasts
-**GET** `/api/podcasts/search?q={query}`
+**GET** `/podcasts/search?q={query}&page={page}&page_size={page_size}`
 
-Search for podcasts by query string.
+Search for podcasts by query string with pagination support.
 
 ### 2. Get Podcast Details
-**GET** `/api/podcasts/{showId}`
+**GET** `/podcasts/{showId}`
 
 Get detailed information about a specific podcast.
 
 ### 3. Get Podcast Episodes
-**GET** `/api/podcasts/{showId}/episodes`
+**GET** `/podcasts/{showId}/episodes?page={page}&page_size={page_size}`
 
-Retrieve episodes for a specific podcast.
+Retrieve paginated episodes for a specific podcast.
+
+## Pagination
+
+All list endpoints support pagination using the following query parameters:
+
+- `page`: Page number (default: 1)
+
+- `page_size`: Number of items per page (default: 20, max: 50)
 
 ## Configuration
 
