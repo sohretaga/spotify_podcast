@@ -45,9 +45,11 @@ INSTALLED_APPS = [
 
     # Third-party apps
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -87,6 +89,7 @@ DATABASES = {
     }
 }
 
+
 # Cache settings
 CACHES = {
     # Use redis cache in production
@@ -96,6 +99,26 @@ CACHES = {
     }
 }
 
+
+# Security settings
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_SSL_REDIRECT = False # True in production
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+X_FRAME_OPTIONS = 'DENY'
+
+
+# CORS settings
+CORS_ALLOWED_ORIGINS = [
+    "https://example.com",
+    "https://www.example.com",
+    "https://admin.example.com",
+    "https://develop.example.com",
+]
+
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_ALL_ORIGINS = True
 
 
 # Password validation
